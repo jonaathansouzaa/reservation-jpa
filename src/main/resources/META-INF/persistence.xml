@@ -4,6 +4,12 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
     <persistence-unit name="reserva-pu">
+        <class>domain.Modality</class>
+        <class>domain.TourType</class>
+        <class>domain.City</class>
+        <class>domain.State</class>
+        <class>domain.TourGuide</class>
+        <class>domain.GuideModality</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/reserva-jpa?serverTimezone=UTC" />
             <property name="javax.persistence.jdbc.user" value="root" />
@@ -13,7 +19,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 
             <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.format_sql" value="true" />
         </properties>
     </persistence-unit>

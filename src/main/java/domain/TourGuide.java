@@ -1,45 +1,29 @@
 package domain;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "modalidade")
-public class Modality implements BaseEntity {
+@Table(name = "guia")
+public class TourGuide {
 
     @Id()
-    @GeneratedValue(generator = "modalidade_seq",
+    @GeneratedValue(generator = "guia_seq",
             strategy = GenerationType.AUTO)
-    @Column(name = "id_modalidade")
+    @Column(name = "id_guia")
     private Long id;
     @Column(name = "nome")
     private String name;
 
-    @OneToMany(mappedBy = "modality")
+    @OneToMany(mappedBy = "tourGuide")
     private List<GuideModality> guideModalityList;
-
-    public Modality() {
-    }
-
-    public Modality(String nome) {
-        this.name = nome;
-    }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long idModalidade) {
-        this.id = idModalidade;
-    }
-
-    public String getNome() {
-        return name;
-    }
-
-    public void setNome(String nome) {
-        this.name = nome;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
